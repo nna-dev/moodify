@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.H1" parent="TextAppearance.MaterialComponents.Headline1" />
+
+    <style name="TextAppearance.H2" parent="TextAppearance.MaterialComponents.Headline2" />
+
+    <style name="TextAppearance.H3" parent="TextAppearance.MaterialComponents.Headline3" />
+
+    <style name="TextAppearance.H4" parent="TextAppearance.MaterialComponents.Headline4" />
+
+    <style name="TextAppearance.H5" parent="TextAppearance.MaterialComponents.Headline5" />
+
+    <style name="TextAppearance.H6" parent="TextAppearance.MaterialComponents.Headline6" />
+
+    <style name="TextAppearance.Title1" parent="TextAppearance.MaterialComponents.Subtitle1" />
+
+    <style name="TextAppearance.Title2" parent="TextAppearance.MaterialComponents.Subtitle2" />
+
+    <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1" />
+
+    <style name="TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2" />
+
+    <style name="TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">@font/google_sans_medium</item>
+        <item name="fontFamily">@font/google_sans_medium</item>
+    </style>
+</resources>
