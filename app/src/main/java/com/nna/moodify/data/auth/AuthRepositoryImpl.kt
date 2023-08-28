@@ -3,7 +3,7 @@ package com.nna.moodify.data.auth
 import com.nna.moodify.BuildConfig
 import com.nna.moodify.data.response.GetTokenResponse.Companion.toBearerToken
 import com.nna.moodify.domain.model.BearerToken
-import com.nna.moodify.domain.auth.AuthRepository
+import com.nna.moodify.domain.repositories.AuthRepository
 import com.nna.moodify.domain.errors.AuthenticationError
 import com.nna.moodify.domain.model.isExpired
 import com.nna.moodify.utils.toBase64

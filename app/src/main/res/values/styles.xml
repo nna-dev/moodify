@@ -11,6 +11,10 @@
 
     <style name="TextAppearance.H5" parent="TextAppearance.MaterialComponents.Headline5" />
 
+    <style name="TextAppearance.H5.Bold" parent="TextAppearance.H5">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextAppearance.H6" parent="TextAppearance.MaterialComponents.Headline6" />
 
     <style name="TextAppearance.Title1" parent="TextAppearance.MaterialComponents.Subtitle1" />
@@ -26,5 +30,11 @@
         <item name="android:letterSpacing">0</item>
         <item name="android:fontFamily">@font/google_sans_medium</item>
         <item name="fontFamily">@font/google_sans_medium</item>
+    </style>
+
+    <style name="Chip.Filter" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/surface</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
     </style>
 </resources>
