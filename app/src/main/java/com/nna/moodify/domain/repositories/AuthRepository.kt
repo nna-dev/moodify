@@ -1,4 +1,4 @@
-package com.nna.moodify.domain.auth
+package com.nna.moodify.domain.repositories
 
 import com.nna.moodify.domain.model.BearerToken
 

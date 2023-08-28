@@ -1,13 +1,11 @@
 package com.nna.moodify.data.client
 
-import com.nna.moodify.domain.auth.AuthRepository
-import com.nna.moodify.domain.errors.AuthenticationError
+import com.nna.moodify.domain.repositories.AuthRepository
 import okhttp3.Interceptor
-import okhttp3.Protocol
 import okhttp3.Response
-import timber.log.Timber
+import javax.inject.Inject
 
-class AuthorizationHeaderInterceptor(
+class AuthorizationHeaderInterceptor @Inject constructor(
     private val authRepository: AuthRepository
 ): Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
@@ -19,15 +17,6 @@ class AuthorizationHeaderInterceptor(
             return chain.proceed(newRequest)
         } catch (e: Exception) {
             throw e
-//            if (e is AuthenticationError) {
-//                Timber.d(e)
-//            }
-//            return Response.Builder()
-//                .code(600)
-//                .protocol(Protocol.HTTP_2)
-//                .body(null)
-//                .request(chain.request())
-//                .build()
         }
     }
 }

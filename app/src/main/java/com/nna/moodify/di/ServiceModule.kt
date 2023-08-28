@@ -4,10 +4,9 @@ import com.nna.moodify.BuildConfig
 import com.nna.moodify.data.SpotifyUrls
 import com.nna.moodify.data.auth.AuthService
 import com.nna.moodify.data.client.AuthorizationHeaderInterceptor
-import com.nna.moodify.data.spotify.MusicService
+import com.nna.moodify.data.music.MusicService
 import com.skydoves.sandwich.adapters.ApiResponseCallAdapterFactory
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +25,6 @@ object ServiceModule {
     @Singleton
     fun provideMoshiConverter(): MoshiConverterFactory = MoshiConverterFactory.create(
         Moshi.Builder()
-            .addLast(KotlinJsonAdapterFactory())
             .build()
     )
 

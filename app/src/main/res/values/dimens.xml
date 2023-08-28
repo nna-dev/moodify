@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="margin_2x">16dp</dimen>
+    <dimen name="margin_3x">24dp</dimen>
+
+    <dimen name="medium_icon_size">32dp</dimen>
+
+    <!-- Home screen -->
+    <dimen name="screen_home_toolbar_margin_top">32dp</dimen>
+</resources>

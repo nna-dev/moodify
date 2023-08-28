@@ -12,9 +12,11 @@
         <!-- Some other colors -->
         <item name="background">@color/background</item>
         <item name="colorOnBackground">@color/on_background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
         <!-- Customize your theme here. -->
         <item name="textAppearanceBody2">@style/TextAppearance.Body2</item>
         <item name="textAppearanceButton">@style/TextAppearance.Button</item>

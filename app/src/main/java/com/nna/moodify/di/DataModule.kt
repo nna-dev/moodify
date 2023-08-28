@@ -3,7 +3,9 @@ package com.nna.moodify.di
 import com.nna.moodify.data.auth.AuthDataSource
 import com.nna.moodify.data.auth.AuthRepositoryImpl
 import com.nna.moodify.data.auth.AuthSharedPrefDataSource
-import com.nna.moodify.domain.auth.AuthRepository
+import com.nna.moodify.data.music.MusicRepositoryImpl
+import com.nna.moodify.domain.repositories.AuthRepository
+import com.nna.moodify.domain.repositories.MusicRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,4 +22,8 @@ interface DataModule {
     @Binds
     @Singleton
     fun bindAuthRepository(authRepository: AuthRepositoryImpl): AuthRepository
+
+    @Binds
+    @Singleton
+    fun bindMusicRepository(musicRepository: MusicRepositoryImpl): MusicRepository
 }
