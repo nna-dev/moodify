@@ -8,4 +8,5 @@
 
     <!-- Home screen -->
     <dimen name="screen_home_toolbar_margin_top">32dp</dimen>
+    <dimen name="screen_home_item_album_image_size">160dp</dimen>
 </resources>

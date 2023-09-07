@@ -1,0 +1,373 @@
+{
+  "message": "Nhạc chưa đủ hay để nghe sao?",
+  "playlists": {
+    "href": "https://api.spotify.com/v1/browse/featured-playlists?country=VN&timestamp=2023-08-26T00%3A00%3A00&offset=0&limit=10",
+    "items": [
+      {
+        "collaborative": false,
+        "description": "Những chiếc nhạc mới trong tuần, được tuyển chọn cẩn thận. Ảnh bìa: Khắc Hưng",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX5G3iiHaIzdf"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX5G3iiHaIzdf",
+        "id": "37i9dQZF1DX5G3iiHaIzdf",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f0000000302c7c63ae03592461dbf7731",
+            "width": null
+          }
+        ],
+        "name": "New Music Friday Vietnam",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5Mjg5NjQwMCwwMDAwMDAwMDIyZWIzYzNhMTEyMDk1MmZhMjBkMjc2YWQxZWQ5Zjk1",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX5G3iiHaIzdf/tracks",
+          "total": 90
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX5G3iiHaIzdf"
+      },
+      {
+        "collaborative": false,
+        "description": "Những 🎶 lãng đãng khó phai. ",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX5HzXEElAlcz"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX5HzXEElAlcz",
+        "id": "37i9dQZF1DX5HzXEElAlcz",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003b8d4b3c31e3c26dde1ec3917",
+            "width": null
+          }
+        ],
+        "name": "lofi thật lâu phai",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5MTk4OTYzNSwwMDAwMDAwMDI4YmMyMjk5ZGU3MzBjZmYxY2I3ZmU0N2YxYzEwYjA3",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX5HzXEElAlcz/tracks",
+          "total": 75
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX5HzXEElAlcz"
+      },
+      {
+        "collaborative": false,
+        "description": "This is BIGBANG. The essential tracks, all in one playlist.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DZ06evO2MKBFK"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO2MKBFK",
+        "id": "37i9dQZF1DZ06evO2MKBFK",
+        "images": [
+          {
+            "height": null,
+            "url": "https://thisis-images.scdn.co/37i9dQZF1DZ06evO2MKBFK-large.jpg",
+            "width": null
+          }
+        ],
+        "name": "This Is BIGBANG",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MjgyMjAzODQsMDAwMDAwMDA4MDU2YzJiZTlhYTMxZDIyNzM0YjlmYjU4NzU2YzdlMQ==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO2MKBFK/tracks",
+          "total": 51
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DZ06evO2MKBFK"
+      },
+      {
+        "collaborative": false,
+        "description": "Những gì mà người bên cạnh bạn đang nghe. Ảnh bìa: BigDaddy, Emily",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWVOaOWiVD1Lf"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVOaOWiVD1Lf",
+        "id": "37i9dQZF1DWVOaOWiVD1Lf",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003324b2696b0931e49804abd69",
+            "width": null
+          }
+        ],
+        "name": "Thiên Hạ Nghe Gì",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5MzE1NDIzNywwMDAwMDAwMGNlZTg0OTdmZDYzMWYwZTgwNGNkMTNmYTk1NmY2NDgx",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVOaOWiVD1Lf/tracks",
+          "total": 101
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWVOaOWiVD1Lf"
+      },
+      {
+        "collaborative": false,
+        "description": "BTS, BLACKPINK, NewJeans, EXO... fan K-Pop còn cần gì hơn lúc này? Ảnh bìa: aespa",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWZZpneIA1A5T"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWZZpneIA1A5T",
+        "id": "37i9dQZF1DWZZpneIA1A5T",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000038edf9dc42b67be6a6ed7a5bb",
+            "width": null
+          }
+        ],
+        "name": "K-Pop Ngay Lúc Này",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5MzE1Mzg0MiwwMDAwMDAwMDJhYjYzYjA1MjkxMzVhMzBlYzQ5NTkwNzcyNTNhNjM1",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWZZpneIA1A5T/tracks",
+          "total": 56
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWZZpneIA1A5T"
+      },
+      {
+        "collaborative": false,
+        "description": "Mấy bài này chill phết",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX35zmlYTBMjk"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX35zmlYTBMjk",
+        "id": "37i9dQZF1DX35zmlYTBMjk",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f0000000311454569fd4ff378b24d6beb",
+            "width": null
+          }
+        ],
+        "name": "Lofi Chill Để Thư Giãn",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5MTA4MjAwMCwwMDAwMDAwMGZiYWEyZjliMmY4MzliY2M2YTFlMDkxZjE3MGYwZWZi",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX35zmlYTBMjk/tracks",
+          "total": 150
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX35zmlYTBMjk"
+      },
+      {
+        "collaborative": false,
+        "description": "Dòng chảy rap Việt luôn cuồn cuộn. Ảnh bìa: Andree Right Hand",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWYLMi9ZNZUaz"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWYLMi9ZNZUaz",
+        "id": "37i9dQZF1DWYLMi9ZNZUaz",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000031200bb7811edb121a06937b3",
+            "width": null
+          }
+        ],
+        "name": "Hip-hop Việt",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5Mjk5NzM3MCwwMDAwMDAwMDI0Yjk1MTAwZDZhYThjYWE5NDBhZjVlZjA2NTU1OGQ0",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWYLMi9ZNZUaz/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWYLMi9ZNZUaz"
+      },
+      {
+        "collaborative": false,
+        "description": "Những ca khúc quốc tế sắp thành hit. Ảnh bìa: Selena Gomez",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX39t8KGTcoSG"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX39t8KGTcoSG",
+        "id": "37i9dQZF1DX39t8KGTcoSG",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000038f2347b5a10bbc2351e14c22",
+            "width": null
+          }
+        ],
+        "name": "Pop Rising Vietnam",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5MjkzNjA0NiwwMDAwMDAwMGY5YTUxOTQ1OGZlMDY1YjkzMmY1NmI4YzYyMTM2YmM3",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX39t8KGTcoSG/tracks",
+          "total": 56
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX39t8KGTcoSG"
+      },
+      {
+        "collaborative": false,
+        "description": "Quán quen, nhạc cũ, cảm giác lạ. ",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX1e2VSJFudND"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1e2VSJFudND",
+        "id": "37i9dQZF1DX1e2VSJFudND",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003bb725c5d5937b5ad9424a920",
+            "width": null
+          }
+        ],
+        "name": "Cà Phê Quán Quen",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY4ODQzNjk3OSwwMDAwMDAwMDllNjQxY2RjNzAzNTBmOGRiNDVmOTU0OTc0MzEwOWYy",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1e2VSJFudND/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX1e2VSJFudND"
+      },
+      {
+        "collaborative": false,
+        "description": "Khi hai trái tim cùng nhịp đập. Ảnh bìa: Hồ Ngọc Hà, Kim Lý",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWUYe7oajVI3W"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWUYe7oajVI3W",
+        "id": "37i9dQZF1DWUYe7oajVI3W",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000031653b62f27b5aaf3cb5fa95d",
+            "width": null
+          }
+        ],
+        "name": "Yêu",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5Mjk5ODE0MywwMDAwMDAwMDNjYmVmMTlhNTIzZTc3NjFlMmM1YTZjZGI3YzBjMTg0",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWUYe7oajVI3W/tracks",
+          "total": 57
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWUYe7oajVI3W"
+      }
+    ],
+    "limit": 10,
+    "next": "https://api.spotify.com/v1/browse/featured-playlists?country=VN&timestamp=2023-08-26T00%3A00%3A00&offset=10&limit=10",
+    "offset": 0,
+    "previous": null,
+    "total": 17
+  }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.nna.moodify.ui.home.HomeLargeCard" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/screen_home_item_album_image_size"
+            android:layout_height="@dimen/screen_home_item_album_image_size"
+            android:contentDescription="@string/app_name"
+            app:imageUri="@{item.imageUri}" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin"
+            android:ellipsize="end"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="@{item.title}"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/screen_home_card_subtitle_color"
+            tools:text="Album" />
+    </LinearLayout>
+</layout>

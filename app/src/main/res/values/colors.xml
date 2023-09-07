@@ -20,4 +20,7 @@
     <color name="on_surface">@color/white</color>
     <color name="error">#FFB00020</color>
     <color name="on_error">@color/white</color>
+
+    <!-- Home screen -->
+    <color name="screen_home_card_subtitle_color">#A7A7A7</color>
 </resources>

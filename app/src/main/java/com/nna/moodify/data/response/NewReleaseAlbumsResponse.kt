@@ -1,7 +1,12 @@
 package com.nna.moodify.data.response
 
+import com.nna.moodify.domain.model.Album
+import com.nna.moodify.domain.model.AlbumType
+import com.nna.moodify.domain.model.Artist
+import com.nna.moodify.domain.model.ImageResolution
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import java.time.LocalDate
 
 @JsonClass(generateAdapter = true)
 data class NewReleaseAlbumsResponse(
@@ -36,11 +41,30 @@ data class AlbumResponse(
     val uri: String
 )
 
+fun AlbumResponse.toAlbum(): Album? {
+    try {
+        val type = AlbumType.ofName(this.type) ?: return null
+        return Album(
+            id = this.id,
+            name = this.name,
+            href = this.href,
+            externalUrls = externalUrls,
+            images = this.images.toResolutionImageMap(),
+            type = type,
+            artists = artists.mapNotNull { it.toArtist() },
+            releaseDate = LocalDate.parse(this.releaseDate),
+            uri = this.uri,
+        )
+    } catch (e: Exception) {
+        return null
+    }
+}
+
 @JsonClass(generateAdapter = true)
 data class ImageResponse(
     val url: String,
-    val height: Int,
-    val width: Int
+    val height: Int?,
+    val width: Int?
 )
 
 @JsonClass(generateAdapter = true)
@@ -52,5 +76,21 @@ data class ArtistResponse(
     val type: String,
     val uri: String
 )
+
+fun ArtistResponse.toArtist(): Artist? {
+    return Artist(
+        id = this.id,
+        name = this.name,
+        href = this.href,
+        type = this.type,
+        uri = this.uri,
+        externalUrls = externalUrls
+    )
+}
+
+fun List<ImageResponse>.toResolutionImageMap(): Map<ImageResolution, String> =
+    map {
+        ImageResolution.ofSize(it.width, it.height) to it.url
+    }.filter { it.first != ImageResolution.Unknown }.toMap()
 
 //typealias ExternalUrls = Map<String, String>
