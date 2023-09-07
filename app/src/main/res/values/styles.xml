@@ -23,13 +23,15 @@
 
     <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1" />
 
-    <style name="TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2" />
+    <style name="TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2">
+<!--        <item name="fontFamily">@font/google_sans_medium</item>-->
+    </style>
 
     <style name="TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
         <item name="textAllCaps">false</item>
         <item name="android:letterSpacing">0</item>
-        <item name="android:fontFamily">@font/google_sans_medium</item>
-        <item name="fontFamily">@font/google_sans_medium</item>
+<!--        <item name="android:fontFamily">@font/google_sans_medium</item>-->
+<!--        <item name="fontFamily">@font/google_sans_medium</item>-->
     </style>
 
     <style name="Chip.Filter" parent="Widget.MaterialComponents.Chip.Filter">
