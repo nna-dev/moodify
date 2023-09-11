@@ -1,1 +1,66 @@
-// TODO
+[versions]
+androidGradlePlugin = "7.4.2"
+kotlin = "1.8.0"
+androidDesugar = "2.0.3"
+androidxAppCompat = "1.6.1"
+material = "1.9.0"
+androidxConstraintlayout = "2.1.4"
+androidxLegacyV4 = "1.0.0"
+androidxLifecycle = "2.6.1"
+junit = "4.13.2"
+androidxTestExt = "1.1.5"
+androidxTestEspresso = "3.5.1"
+timber = "5.0.1"
+ktx = "1.9.0"
+fragment-ktx = "1.5.7"
+androidx-navigation = "2.6.0"
+hilt = "2.47"
+securityCrypto = "1.0.0"
+sandwich = "1.3.7"
+sandwichSerialization = "1.3.2"
+retrofit = "2.9.0"
+http3LoggingInterceptor = "4.11.0"
+moshi = "1.14.0"
+glide = "4.16.0"
+epoxy = "5.1.3"
+
+[libraries]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintlayout" }
+androidx-legacy-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "androidxLegacyV4" }
+androidx-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidxLifecycle" }
+androidx-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidxLifecycle" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExt" }
+androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspresso" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ktx" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidx-navigation" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
+sandwich = { group = "com.github.skydoves", name = "sandwich", version.ref = "sandwich" }
+sandwich-serialization = { group = "com.github.skydoves", name = "sandwich-serialization", version.ref = "sandwichSerialization" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+http3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "http3LoggingInterceptor" }
+moshi-moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+epoxy-epoxy = { group = "com.airbnb.android", name = "epoxy", version.ref = "epoxy" }
+epoxy-binding = { group = "com.airbnb.android", name = "epoxy-databinding", version.ref = "epoxy" }
+epoxy-processor = { group = "com.airbnb.android", name = "epoxy-processor", version.ref = "epoxy" }
+android-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugar" }
+
+[bundles]
+androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
