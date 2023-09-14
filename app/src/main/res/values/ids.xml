@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="epoxy_viewbinding" type="id" />
+
+    <!-- These ids are used in both the menu (main_bottom_navigation.xml) and the nav graph (main_nav_graph)
+    Each menu item and nav graph item use the same logical item-->
+    <item name="navigation_home" type="id" />
+    <item name="navigation_search" type="id" />
+    <item name="navigation_premium" type="id" />
 </resources>
