@@ -1,9 +1,7 @@
 package com.nna.moodify.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -13,30 +11,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.epoxy.Carousel
 import com.nna.moodify.R
 import com.nna.moodify.databinding.FragmentHomeBinding
+import com.nna.moodify.extensions.showShortToast
 import com.nna.moodify.ui.BindingFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home),
+    HomeRecyclerController.OnItemClickListener {
     private val viewModel: HomeViewModel by viewModels()
     private val controller: HomeRecyclerController by lazy {
         HomeRecyclerController(
             Carousel.Padding(
                 resources.getDimensionPixelSize(R.dimen.margin_2x),
                 resources.getDimensionPixelSize(R.dimen.margin_2x)
-            )
+            ),
+            onItemClickListener = this@HomeFragment
         )
     }
     private val carousels = mutableListOf<HomeCarousel>()
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -64,5 +57,9 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
 
     private fun refreshCarouselsView() {
         controller.setData(carousels.toList())
+    }
+
+    override fun onClickCard(item: HomeLargeCard) {
+        showShortToast(item.title)
     }
 }

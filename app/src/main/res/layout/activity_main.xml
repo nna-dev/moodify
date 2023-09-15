@@ -28,18 +28,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/main_nav_graph" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/bottom_navigation_gradient_bg"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/bottom_navigation_container_height"
             android:layout_gravity="bottom"
-            android:background="@drawable/bottom_navigation_transparent_bg"
+            android:background="@drawable/bottom_navigation_gradient_bg"
+            android:paddingTop="@dimen/bottom_navigation_padding_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/main_bottom_nav_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>

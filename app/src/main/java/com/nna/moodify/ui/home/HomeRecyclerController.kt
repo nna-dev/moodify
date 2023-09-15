@@ -8,8 +8,13 @@ import com.nna.moodify.ItemHomeLargeCarouselBindingModel_
 import com.nna.moodify.ui.epoxyhelpers.CarouselNoSnapModel_
 
 class HomeRecyclerController(
-    private val carouselPadding: Carousel.Padding
+    private val carouselPadding: Carousel.Padding,
+    private val onItemClickListener: OnItemClickListener
 ) : TypedEpoxyController<List<HomeCarousel>>() {
+
+    interface OnItemClickListener {
+        fun onClickCard(item: HomeLargeCard)
+    }
 
     @AutoModel
     lateinit var loading: ItemLoading
@@ -20,16 +25,21 @@ class HomeRecyclerController(
             return
         }
         for (category in data) {
-            val items = category.items.map { item ->
-                ItemHomeLargeCarouselBindingModel_().id(item.id).item(item)
-            }
-            add(ItemHomeCarouselTitleBindingModel_().id(category.title).title(category.title))
-            add(
-                CarouselNoSnapModel_()
-                    .id(category.id)
-                    .models(items)
-                    .padding(carouselPadding)
-            )
+            add(createTitleItem(category.title))
+            add(createNoSnapCarousel(category))
         }
     }
+
+    private fun createTitleItem(title: String) =
+        ItemHomeCarouselTitleBindingModel_().id(title).title(title)
+
+    private fun createLargeCardItem(card: HomeLargeCard) =
+        ItemHomeLargeCarouselBindingModel_().id(card.id)
+            .item(card)
+            .onItemClickListener(onItemClickListener)
+
+    private fun createNoSnapCarousel(carousel: HomeCarousel) =
+        CarouselNoSnapModel_().id(carousel.id)
+            .models(carousel.items.map { createLargeCardItem(it) })
+            .padding(carouselPadding)
 }
