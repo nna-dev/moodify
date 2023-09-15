@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="onItemClickListener"
+            type="com.nna.moodify.ui.home.HomeRecyclerController.OnItemClickListener" />
+
+        <variable
             name="item"
             type="com.nna.moodify.ui.home.HomeLargeCard" />
     </data>
@@ -13,7 +17,10 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{() -> onItemClickListener.onClickCard(item)}"
+        android:orientation="vertical"
+        android:stateListAnimator="@animator/on_press_scale_animator">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image"
