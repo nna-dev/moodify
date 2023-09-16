@@ -11,6 +11,9 @@
         <item name="colorOnSecondary">@color/on_secondary</item>
         <!-- Some other colors -->
         <item name="background">@color/background</item>
+        <item name="backgroundColor">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:background">@color/background</item>
         <item name="colorOnBackground">@color/on_background</item>
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/on_surface</item>
@@ -20,5 +23,6 @@
         <!-- Customize your theme here. -->
         <item name="textAppearanceBody2">@style/TextAppearance.Body2</item>
         <item name="textAppearanceButton">@style/TextAppearance.Button</item>
+        <item name="android:textColor">@color/on_primary</item>
     </style>
 </resources>
