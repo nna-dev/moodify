@@ -6,6 +6,7 @@ import com.nna.moodify.data.demo.DemoResourcePath
 import com.nna.moodify.domain.model.Album
 import com.nna.moodify.domain.model.Category
 import com.nna.moodify.domain.model.Playlist
+import com.nna.moodify.domain.model.Track
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -20,5 +21,9 @@ class DemoMusicDataSource @Inject constructor(
 
     override suspend fun getPlaylistsForCountry(): Map<Category, List<Playlist>> {
         return mapOf()
+    }
+
+    override suspend fun getPlaylist(): List<Track> {
+        return emptyList()
     }
 }
