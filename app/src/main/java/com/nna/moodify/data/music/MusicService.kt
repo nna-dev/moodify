@@ -1,6 +1,7 @@
 package com.nna.moodify.data.music
 
 import com.nna.moodify.data.response.GetCategoriesResponse
+import com.nna.moodify.data.response.GetCategoryPlaylistsResponse
 import com.nna.moodify.data.response.GetPlaylistResponse
 import com.nna.moodify.data.response.NewReleaseAlbumsResponse
 import com.skydoves.sandwich.ApiResponse
@@ -30,5 +31,11 @@ interface MusicService {
         @Query("country") country: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0
+    ): ApiResponse<GetCategoryPlaylistsResponse>
+
+    @GET("/v1/playlists/{playlist_id}")
+    suspend fun getPlaylist(
+        @Path("playlist_id") playlistId: String,
+        @Query("market") market: String,
     ): ApiResponse<GetPlaylistResponse>
 }

@@ -6,6 +6,7 @@ import com.nna.moodify.data.response.toPlaylist
 import com.nna.moodify.domain.model.Album
 import com.nna.moodify.domain.model.Category
 import com.nna.moodify.domain.model.Playlist
+import com.nna.moodify.domain.model.Track
 import com.skydoves.sandwich.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -54,5 +55,10 @@ class RemoteMusicDataSource @Inject constructor(
                 Timber.e(message())
             }
         return result
+    }
+
+    override suspend fun getPlaylist(): List<Track> {
+        val result = mutableMapOf<Category, List<Playlist>>()
+        return emptyList()
     }
 }
