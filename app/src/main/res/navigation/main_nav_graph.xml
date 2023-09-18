@@ -9,10 +9,15 @@
         android:id="@id/navigation_home"
         android:name="com.nna.moodify.ui.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_navigation_home_to_playlistDetail"
-            app:destination="@id/playlistDetail" />
+            app:destination="@id/playlistDetail">
+
+            <argument
+                android:name="playlistId"
+                app:argType="string" />
+        </action>
     </fragment>
 
     <fragment
@@ -25,5 +30,9 @@
         android:id="@+id/playlistDetail"
         android:name="com.nna.moodify.ui.playlistdetail.PlaylistDetailFragment"
         android:label="Playlist details"
-        tools:layout="@layout/fragment_playlist_detail" />
+        tools:layout="@layout/fragment_playlist_detail">
+        <argument
+            android:name="playlistId"
+            app:argType="string" />
+    </fragment>
 </navigation>

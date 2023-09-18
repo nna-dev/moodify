@@ -13,7 +13,7 @@ androidxTestEspresso = "3.5.1"
 timber = "5.0.1"
 ktx = "1.9.0"
 fragment-ktx = "1.5.7"
-androidx-navigation = "2.6.0"
+androidx-navigation = "2.5.3"
 hilt = "2.47"
 securityCrypto = "1.0.0"
 sandwich = "1.3.7"
@@ -64,3 +64,4 @@ android-library = { id = "com.android.library", version.ref = "androidGradlePlug
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "androidx-navigation" }
