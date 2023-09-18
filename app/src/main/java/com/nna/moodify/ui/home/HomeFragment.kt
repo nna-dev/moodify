@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.epoxy.Carousel
@@ -61,5 +62,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
 
     override fun onClickCard(item: HomeLargeCard) {
         showShortToast(item.title)
+        val action = HomeFragmentDirections.actionNavigationHomeToPlaylistDetail(item.id)
+        findNavController().navigate(action)
     }
 }
