@@ -3,6 +3,7 @@ package com.nna.moodify.data.music
 import com.nna.moodify.data.response.toAlbum
 import com.nna.moodify.data.response.toCategory
 import com.nna.moodify.data.response.toPlaylist
+import com.nna.moodify.data.response.toTrack
 import com.nna.moodify.domain.model.Album
 import com.nna.moodify.domain.model.Category
 import com.nna.moodify.domain.model.Playlist
@@ -57,8 +58,16 @@ class RemoteMusicDataSource @Inject constructor(
         return result
     }
 
-    override suspend fun getPlaylist(): List<Track> {
-        val result = mutableMapOf<Category, List<Playlist>>()
-        return emptyList()
+    override suspend fun getPlaylist(playlistId: String): List<Track> {
+        val result = mutableListOf<Track>()
+        musicService.getPlaylist(playlistId, "VN")
+            .suspendOnSuccess {
+                val tracks = data.tracks.items.map { it.track.toTrack() }
+                result.addAll(tracks)
+            }
+            .suspendOnFailure {
+                Timber.e(message())
+            }
+        return result
     }
 }

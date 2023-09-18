@@ -51,11 +51,14 @@
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_tracks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lorem"
-            android:textAppearance="@style/TextAppearance.H1" />
+            android:padding="@dimen/margin_2x"
+            android:paddingBottom="@dimen/bottom_navigation_container_height"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_track" />
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -8,5 +8,5 @@ import com.nna.moodify.domain.model.Track
 interface MusicDataSource {
     suspend fun getNewReleaseAlbums(): List<Album>
     suspend fun getPlaylistsForCountry(): Map<Category, List<Playlist>>
-    suspend fun getPlaylist(): List<Track>
+    suspend fun getPlaylist(playlistId: String): List<Track>
 }

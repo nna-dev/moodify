@@ -5,11 +5,15 @@
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/navigation_home">
 
-<!--    <fragment-->
-<!--        android:id="@id/navigation_home"-->
-<!--        android:name="com.nna.moodify.ui.home.HomeFragment"-->
-<!--        android:label="Home"-->
-<!--        tools:layout="@layout/fragment_home" />-->
+    <fragment
+        android:id="@id/navigation_home"
+        android:name="com.nna.moodify.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_playlistDetail"
+            app:destination="@id/playlistDetail" />
+    </fragment>
 
     <fragment
         android:id="@id/navigation_search"
@@ -18,7 +22,7 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@id/navigation_home"
+        android:id="@+id/playlistDetail"
         android:name="com.nna.moodify.ui.playlistdetail.PlaylistDetailFragment"
         android:label="Playlist details"
         tools:layout="@layout/fragment_playlist_detail" />
