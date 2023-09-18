@@ -28,7 +28,7 @@ data class AlbumsResponse(
 data class AlbumResponse(
     @Json(name = "album_type") val albumType: String,
     @Json(name = "artists") val artists: List<ArtistResponse>,
-    @Json(name = "available_markets") val availableMarkets: List<String>,
+    @Json(name = "available_markets") val availableMarkets: List<String> = emptyList(),
     @Json(name = "external_urls") val externalUrls: Map<String, String>,
     val href: String,
     val id: String,

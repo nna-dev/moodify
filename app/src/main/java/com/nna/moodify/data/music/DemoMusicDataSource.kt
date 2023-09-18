@@ -23,7 +23,7 @@ class DemoMusicDataSource @Inject constructor(
         return mapOf()
     }
 
-    override suspend fun getPlaylist(): List<Track> {
+    override suspend fun getPlaylist(playlistId: String): List<Track> {
         return emptyList()
     }
 }

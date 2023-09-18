@@ -6,15 +6,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.nna.moodify.R
 import com.nna.moodify.databinding.FragmentPlaylistDetailBinding
+import com.nna.moodify.extensions.addVerticalItemSpacing
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import kotlin.math.abs
 
+@AndroidEntryPoint
 class PlaylistDetailFragment : Fragment() {
-    private lateinit var viewModel: PlaylistDetailViewModel
+    private val viewModel: PlaylistDetailViewModel by viewModels()
     private var _binding: FragmentPlaylistDetailBinding? = null
     private val binding: FragmentPlaylistDetailBinding
         get() = _binding!!
+
+    private val tracksAdapter: TracksAdapter by lazy { TracksAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +59,22 @@ class PlaylistDetailFragment : Fragment() {
                 }
             } else {
                 binding.image.isVisible = false
+            }
+        }
+
+        binding.recyclerTracks.apply {
+            layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+            adapter = tracksAdapter
+            addVerticalItemSpacing(vertical = resources.getDimensionPixelSize(R.dimen.margin))
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.tracks.collect { tracks ->
+                        tracksAdapter.submitList(tracks.map { TrackViewModel.fromTrack(it) })
+                    }
+                }
             }
         }
     }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="track"
+            type="com.nna.moodify.ui.playlistdetail.TrackViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/track_image"
+            android:layout_width="@dimen/screen_playlist_detail_item_image_size"
+            android:layout_height="@dimen/screen_playlist_detail_item_image_size"
+            app:imageUri="@{track.imageUri}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/test_image" />
+
+        <TextView
+            android:id="@+id/track_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin"
+            android:text="@{track.title}"
+            android:textAppearance="@style/TextAppearance.Body1"
+            app:layout_constraintBottom_toTopOf="@id/track_artists"
+            app:layout_constraintEnd_toStartOf="@id/more_button"
+            app:layout_constraintStart_toEndOf="@id/track_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Call Me" />
+
+        <TextView
+            android:id="@+id/track_artists"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin"
+            android:text="@{track.artists}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/more_button"
+            app:layout_constraintStart_toEndOf="@id/track_image"
+            app:layout_constraintTop_toBottomOf="@id/track_title"
+            tools:text="Wren Evans, itsnk" />
+
+        <ImageView
+            android:id="@+id/more_button"
+            android:layout_width="@dimen/screen_playlist_detail_item_more_button_size"
+            android:layout_height="@dimen/screen_playlist_detail_item_more_button_size"
+            android:src="@drawable/ic_more_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorOnSurface" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
