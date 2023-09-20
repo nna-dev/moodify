@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -67,6 +68,10 @@ class PlaylistDetailFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             adapter = tracksAdapter
             addVerticalItemSpacing(vertical = resources.getDimensionPixelSize(R.dimen.margin))
+        }
+
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
