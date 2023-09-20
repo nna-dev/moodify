@@ -13,11 +13,11 @@ import javax.inject.Inject
 @HiltViewModel
 class PlaylistDetailViewModel @Inject constructor(
     private val getPlaylistTracksUseCase: GetPlaylistTracksUseCase,
-    private val savedStateHandle: SavedStateHandle,
+    savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
     private val args = PlaylistDetailFragmentArgs.fromSavedStateHandle(savedStateHandle)
 
-    private val _tracks = flow<List<Track>> {
+    private val _tracks = flow {
         emit(getPlaylistTracksUseCase(args.playlistId).successOr(emptyList()))
     }
     val tracks = _tracks.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())

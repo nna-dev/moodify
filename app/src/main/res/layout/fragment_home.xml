@@ -115,7 +115,7 @@
                     android:id="@+id/recycler_music"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/bottom_navigation_container_height"
+                    android:paddingBottom="@dimen/bottom_navigation_background_height"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
