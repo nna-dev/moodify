@@ -1,5 +1,6 @@
 package com.nna.moodify.data.response
 
+import com.nna.moodify.domain.model.Playlist
 import com.nna.moodify.domain.model.Track
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -15,7 +16,21 @@ data class GetPlaylistResponse(
     val name: String,
     @Json(name = "primary_color") val primaryColor: String,
     @Json(name = "snapshot_id") val snapShotId: String,
-    val tracks: TracksResponse
+    val tracks: TracksResponse,
+    val type: String,
+    val uri: String,
+)
+
+fun GetPlaylistResponse.getPlaylist() = Playlist(
+    id = this.id,
+    collaborative = this.collaborative,
+    description = this.description,
+    externalUrls = this.externalUrls,
+    href = this.href,
+    images = this.images.toResolutionImageMap(),
+    name = this.name,
+    primaryColor = this.primaryColor,
+    uri = this.uri,
 )
 
 @JsonClass(generateAdapter = true)

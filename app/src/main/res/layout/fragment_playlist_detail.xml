@@ -38,12 +38,11 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="@dimen/default_toolbar_height"
                 android:background="@android:color/transparent"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@drawable/ic_back"
-                app:navigationIconTint="?attr/colorOnBackground"
-                app:title="Title" />
+                app:navigationIconTint="?attr/colorOnBackground" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -58,6 +57,16 @@
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/bottom_navigation_background_height">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/media_menu_container"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_tracks"
                 android:layout_width="0dp"
@@ -65,10 +74,18 @@
                 android:padding="@dimen/margin_2x"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/media_menu_container"
                 tools:itemCount="10"
                 tools:listitem="@layout/item_track" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="@dimen/screen_playlist_detail_play_button_size"
+        android:layout_height="@dimen/screen_playlist_detail_play_button_size"
+        android:layout_marginTop="@dimen/default_half_toolbar_height"
+        app:fabCustomSize="@dimen/screen_playlist_detail_play_button_size"
+        app:layout_anchor="@id/media_menu_container"
+        app:layout_anchorGravity="center_vertical|end"
+        app:srcCompat="@drawable/ic_play" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

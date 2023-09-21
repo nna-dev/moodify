@@ -1,13 +1,7 @@
 package com.nna.moodify.data.music
 
-import com.nna.moodify.data.response.toAlbum
-import com.nna.moodify.data.response.toCategory
-import com.nna.moodify.data.response.toPlaylist
-import com.nna.moodify.data.response.toTrack
-import com.nna.moodify.domain.model.Album
-import com.nna.moodify.domain.model.Category
-import com.nna.moodify.domain.model.Playlist
-import com.nna.moodify.domain.model.Track
+import com.nna.moodify.data.response.*
+import com.nna.moodify.domain.model.*
 import com.skydoves.sandwich.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -58,16 +52,18 @@ class RemoteMusicDataSource @Inject constructor(
         return result
     }
 
-    override suspend fun getPlaylist(playlistId: String): List<Track> {
-        val result = mutableListOf<Track>()
+    override suspend fun getPlaylist(playlistId: String): PlaylistDetail {
+        var result: PlaylistDetail? = null
         musicService.getPlaylist(playlistId, "VN")
             .suspendOnSuccess {
+                val playlist = this.data.getPlaylist()
                 val tracks = data.tracks.items.map { it.track.toTrack() }
-                result.addAll(tracks)
+                result = PlaylistDetail(playlist, tracks)
             }
             .suspendOnFailure {
                 Timber.e(message())
+                throw Exception(this.message())
             }
-        return result
+        return result!!
     }
 }

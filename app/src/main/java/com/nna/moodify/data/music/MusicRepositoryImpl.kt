@@ -1,9 +1,6 @@
 package com.nna.moodify.data.music
 
-import com.nna.moodify.domain.model.Album
-import com.nna.moodify.domain.model.Category
-import com.nna.moodify.domain.model.Playlist
-import com.nna.moodify.domain.model.Track
+import com.nna.moodify.domain.model.*
 import com.nna.moodify.domain.repositories.MusicRepository
 import javax.inject.Inject
 import javax.inject.Named
@@ -20,7 +17,7 @@ class MusicRepositoryImpl @Inject constructor(
         return remoteDataSource.getPlaylistsForCountry()
     }
 
-    override suspend fun getPlaylistTracks(playlistId: String): List<Track> {
+    override suspend fun getPlaylistDetail(playlistId: String): PlaylistDetail {
         return remoteDataSource.getPlaylist(playlistId)
     }
 }
