@@ -8,6 +8,6 @@ data class Playlist(
     val href: String,
     val images: Map<ImageResolution, String>,
     val name: String,
-    val primaryColor: String?,
+    val primaryColor: String? = null,
     val uri: String
 )

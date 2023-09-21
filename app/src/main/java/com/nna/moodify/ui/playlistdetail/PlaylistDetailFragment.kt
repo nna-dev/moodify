@@ -1,5 +1,6 @@
 package com.nna.moodify.ui.playlistdetail
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,15 +12,14 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.bumptech.glide.Glide
 import com.nna.moodify.R
 import com.nna.moodify.databinding.FragmentPlaylistDetailBinding
+import com.nna.moodify.domain.model.getDefaultImageUri
 import com.nna.moodify.extensions.addVerticalItemSpacing
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -77,8 +77,30 @@ class PlaylistDetailFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
-                    viewModel.tracks.collect { tracks ->
-                        tracksAdapter.submitList(tracks.map { TrackViewModel.fromTrack(it) })
+                    viewModel.detailState.collect { state ->
+                        when (state) {
+                            is PlaylistDetailState.Success -> {
+                                tracksAdapter.submitList(state.tracks.map {
+                                    TrackViewModel.fromTrack(
+                                        it
+                                    )
+                                })
+                                state.playlist.primaryColor?.let {
+                                    Timber.d("primary color $it")
+                                    binding.toolbarLayout.setContentScrimColor(Color.parseColor(it))
+                                }
+                                state.playlist.images.getDefaultImageUri()?.let {
+                                    Glide.with(requireContext())
+                                        .load(it)
+                                        .centerInside()
+                                        .into(binding.image)
+                                }
+
+                            }
+                            else -> {
+                                // TODO
+                            }
+                        }
                     }
                 }
             }
