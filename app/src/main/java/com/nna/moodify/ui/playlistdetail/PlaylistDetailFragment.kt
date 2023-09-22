@@ -95,7 +95,7 @@ class PlaylistDetailFragment : Fragment() {
                                         .centerInside()
                                         .into(binding.image)
                                 }
-
+                                binding.playlistTitle.text = state.playlist.name
                             }
                             else -> {
                                 // TODO
