@@ -60,10 +60,54 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/media_menu_container"
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/playlist_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_2x"
+                    android:textAppearance="@style/TextAppearance.Body2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Get it" />
+
+                <TextView
+                    android:id="@+id/saved_counter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin"
+                    android:textAppearance="@style/TextAppearance.Body2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/playlist_title"
+                    tools:text="2.464.655 saved - 9h54m" />
+
+                <ImageView
+                    android:id="@+id/button_add"
+                    android:layout_width="@dimen/small_icon_size"
+                    android:layout_height="@dimen/small_icon_size"
+                    android:layout_marginStart="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin"
+                    android:src="@drawable/ic_add_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/saved_counter"
+                    app:tint="?attr/colorOnSurface" />
+
+                <ImageView
+                    android:id="@+id/button_download"
+                    android:layout_width="@dimen/small_icon_size"
+                    android:layout_height="@dimen/small_icon_size"
+                    android:layout_marginStart="@dimen/margin"
+                    android:src="@drawable/ic_download"
+                    app:layout_constraintStart_toEndOf="@id/button_add"
+                    app:layout_constraintTop_toTopOf="@id/button_add"
+                    app:tint="?attr/colorOnSurface" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -84,6 +128,7 @@
         android:layout_width="@dimen/screen_playlist_detail_play_button_size"
         android:layout_height="@dimen/screen_playlist_detail_play_button_size"
         android:layout_marginTop="@dimen/default_half_toolbar_height"
+        android:layout_marginEnd="@dimen/margin_2x"
         app:fabCustomSize="@dimen/screen_playlist_detail_play_button_size"
         app:layout_anchor="@id/media_menu_container"
         app:layout_anchorGravity="center_vertical|end"
