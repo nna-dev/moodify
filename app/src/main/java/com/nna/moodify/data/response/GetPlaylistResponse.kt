@@ -11,6 +11,7 @@ data class GetPlaylistResponse(
     val collaborative: Boolean = false,
     val description: String,
     @Json(name = "external_urls") val externalUrls: Map<String, String> = emptyMap(),
+    val followers: FollowerResponse,
     val href: String,
     val images: List<ImageResponse>,
     val name: String,
@@ -31,6 +32,12 @@ fun GetPlaylistResponse.getPlaylist() = Playlist(
     name = this.name,
     primaryColor = this.primaryColor,
     uri = this.uri,
+)
+
+@JsonClass(generateAdapter = true)
+data class FollowerResponse(
+    val href: String? = null,
+    val total: Int
 )
 
 @JsonClass(generateAdapter = true)

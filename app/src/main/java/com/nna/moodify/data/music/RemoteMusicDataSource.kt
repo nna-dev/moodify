@@ -58,7 +58,7 @@ class RemoteMusicDataSource @Inject constructor(
             .suspendOnSuccess {
                 val playlist = this.data.getPlaylist()
                 val tracks = data.tracks.items.map { it.track.toTrack() }
-                result = PlaylistDetail(playlist, tracks)
+                result = PlaylistDetail(playlist, tracks, data.followers.total)
             }
             .suspendOnFailure {
                 Timber.e(message())
