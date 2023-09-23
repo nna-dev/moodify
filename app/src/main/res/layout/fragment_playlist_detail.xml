@@ -78,7 +78,7 @@
                     tools:text="Get it" />
 
                 <TextView
-                    android:id="@+id/saved_counter"
+                    android:id="@+id/tv_followers"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_2x"
@@ -96,7 +96,7 @@
                     android:layout_marginTop="@dimen/margin"
                     android:src="@drawable/ic_add_circle"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/saved_counter"
+                    app:layout_constraintTop_toBottomOf="@id/tv_followers"
                     app:tint="?attr/colorOnSurface" />
 
                 <ImageView

@@ -23,6 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import java.text.NumberFormat
 import kotlin.math.abs
 
 @AndroidEntryPoint
@@ -80,22 +81,25 @@ class PlaylistDetailFragment : Fragment() {
                     viewModel.detailState.collect { state ->
                         when (state) {
                             is PlaylistDetailState.Success -> {
-                                tracksAdapter.submitList(state.tracks.map {
+                                val detail = state.playlistDetail
+                                tracksAdapter.submitList(detail.tracks.map {
                                     TrackViewModel.fromTrack(
                                         it
                                     )
                                 })
-                                state.playlist.primaryColor?.let {
+                                detail.playlist.primaryColor?.let {
                                     Timber.d("primary color $it")
                                     binding.toolbarLayout.setContentScrimColor(Color.parseColor(it))
                                 }
-                                state.playlist.images.getDefaultImageUri()?.let {
+                                detail.playlist.images.getDefaultImageUri()?.let {
                                     Glide.with(requireContext())
                                         .load(it)
                                         .centerInside()
                                         .into(binding.image)
                                 }
-                                binding.playlistTitle.text = state.playlist.name
+                                binding.playlistTitle.text = detail.playlist.name
+                                binding.tvFollowers.text =
+                                    NumberFormat.getNumberInstance().format(detail.followerCount)
                             }
                             else -> {
                                 // TODO
