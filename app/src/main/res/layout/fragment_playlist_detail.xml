@@ -19,9 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.Body1"
             app:collapsedTitleTextColor="?attr/colorOnBackground"
             app:contentScrim="?attr/background"
-            app:expandedTitleTextColor="?attr/colorOnBackground"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:scrimAnimationDuration="@integer/material_motion_duration_long_2"
             app:titleCollapseMode="scale"
@@ -67,10 +67,12 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/playlist_title"
+                    android:id="@+id/playlist_description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_2x"
+                    android:ellipsize="end"
+                    android:maxLines="2"
                     android:textAppearance="@style/TextAppearance.Body2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +87,7 @@
                     android:layout_marginTop="@dimen/margin"
                     android:textAppearance="@style/TextAppearance.Body2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/playlist_title"
+                    app:layout_constraintTop_toBottomOf="@id/playlist_description"
                     tools:text="2.464.655 saved - 9h54m" />
 
                 <ImageView

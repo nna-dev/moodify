@@ -30,7 +30,7 @@ fun GetPlaylistResponse.getPlaylist() = Playlist(
     href = this.href,
     images = this.images.toResolutionImageMap(),
     name = this.name,
-    primaryColor = this.primaryColor,
+    primaryColor = if (this.primaryColor == "#FFFFFF") "#e98df5" else this.primaryColor,
     uri = this.uri,
 )
 
