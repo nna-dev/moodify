@@ -63,6 +63,8 @@ class PlaylistDetailFragment : Fragment() {
             } else {
                 binding.image.isVisible = false
             }
+
+            binding.toolbarLayout.isTitleEnabled = scrollPercentage < TOOLBAR_TITLE_ENABLE_THRESHOLD
         }
 
         binding.recyclerTracks.apply {
@@ -97,7 +99,8 @@ class PlaylistDetailFragment : Fragment() {
                                         .centerInside()
                                         .into(binding.image)
                                 }
-                                binding.playlistTitle.text = detail.playlist.name
+                                binding.toolbarLayout.title = detail.playlist.name
+                                binding.playlistDescription.text = detail.playlist.description
                                 binding.tvFollowers.text =
                                     NumberFormat.getNumberInstance().format(detail.followerCount)
                             }
@@ -119,6 +122,7 @@ class PlaylistDetailFragment : Fragment() {
     companion object {
         private const val IMAGE_SCALE_THRESHOLD = 0.9f
         private const val IMAGE_OPACITY_THRESHOLD = 0.3f
+        private const val TOOLBAR_TITLE_ENABLE_THRESHOLD = 0.05f
         private const val IMAGE_OPACITY_RANGE = IMAGE_SCALE_THRESHOLD - IMAGE_OPACITY_THRESHOLD
     }
 }
