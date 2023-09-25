@@ -12,4 +12,7 @@
     <string name="screen_home_title">Good evening</string>
     <string name="screen_home_music_filter_chip_title">Music</string>
     <string name="screen_home_podcasts_and_shows_chip_title">Podcasts \&amp; Show</string>
+
+    <!-- Search screen -->
+    <string name="screen_search_search_hint">What do you want to listen to?</string>
 </resources>

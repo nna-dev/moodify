@@ -1,13 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchFragment">
 
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Search Fragment" />
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:orientation="horizontal"
+            app:layout_scrollFlags="scroll">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/menu_search_title"
+                android:textAppearance="@style/TextAppearance.H5.Bold" />
+
+            <ImageView
+                android:layout_width="@dimen/medium_icon_size"
+                android:layout_height="@dimen/medium_icon_size"
+                android:src="@drawable/ic_camera"
+                app:tint="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_2x"
+            android:layout_marginVertical="@dimen/margin_2x"
+            android:background="?attr/colorOnSurface"
+            app:defaultQueryHint="@string/menu_search_title"
+            app:layout_scrollFlags="noScroll"
+            app:queryHint="@string/screen_search_search_hint" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_recycler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:spanCount="2"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_search_category" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lorem"
+                android:textAppearance="@style/TextAppearance.H1"
+                app:layout_constraintTop_toBottomOf="@id/search_recycler" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

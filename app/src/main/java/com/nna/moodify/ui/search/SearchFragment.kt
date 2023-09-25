@@ -4,16 +4,39 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.nna.moodify.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.nna.moodify.databinding.FragmentSearchBinding
+import com.nna.moodify.ui.ViewBindingFragment
+import kotlinx.coroutines.launch
 
-class SearchFragment : Fragment() {
-    private lateinit var viewModel: SearchViewModel
+class SearchFragment : ViewBindingFragment<FragmentSearchBinding>() {
+    private val viewModel: SearchViewModel by viewModels()
+    private val adapter = SearchCategoriesAdapter()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun onBind(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_search, container, false)
+    ): FragmentSearchBinding {
+        return FragmentSearchBinding.inflate(inflater, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.searchRecycler.apply {
+            adapter = this@SearchFragment.adapter
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.categories.collect {
+                        adapter.submitList(it)
+                    }
+                }
+            }
+        }
     }
 }
