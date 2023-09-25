@@ -22,4 +22,9 @@
     <dimen name="screen_playlist_detail_item_image_size">56dp</dimen>
     <dimen name="screen_playlist_detail_item_more_button_size">@dimen/small_icon_size</dimen>
     <dimen name="screen_playlist_detail_play_button_size">56dp</dimen>
+
+    <!-- Search screen -->
+    <dimen name="screen_search_item_title_margin_end">32dp</dimen>
+    <dimen name="screen_search_item_image_size">64dp</dimen>
+    <dimen name="screen_search_item_image_translationX">16dp</dimen>
 </resources>
