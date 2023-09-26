@@ -8,10 +8,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.nna.moodify.R
 import com.nna.moodify.databinding.FragmentSearchBinding
+import com.nna.moodify.extensions.addGridItemSpacing
 import com.nna.moodify.ui.ViewBindingFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SearchFragment : ViewBindingFragment<FragmentSearchBinding>() {
     private val viewModel: SearchViewModel by viewModels()
     private val adapter = SearchCategoriesAdapter()
@@ -28,7 +32,16 @@ class SearchFragment : ViewBindingFragment<FragmentSearchBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding.searchRecycler.apply {
             adapter = this@SearchFragment.adapter
+            val space = resources.getDimensionPixelSize(R.dimen.margin)
+            addGridItemSpacing(
+                vertical = space,
+                horizontal = space,
+                ignoreFirstLastRow = true,
+                ignoreStartEndRow = true,
+                spanCount = 2
+            )
         }
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {

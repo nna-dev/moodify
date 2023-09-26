@@ -20,4 +20,8 @@ class MusicRepositoryImpl @Inject constructor(
     override suspend fun getPlaylistDetail(playlistId: String): PlaylistDetail {
         return remoteDataSource.getPlaylist(playlistId)
     }
+
+    override suspend fun getCategories(limit: Int): List<Category> {
+        return remoteDataSource.getCategories(limit)
+    }
 }

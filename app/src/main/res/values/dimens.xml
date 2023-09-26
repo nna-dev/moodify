@@ -13,6 +13,8 @@
     <dimen name="default_toolbar_height">56dp</dimen>
     <dimen name="default_half_toolbar_height">28dp</dimen>
 
+    <dimen name="corner_size_small">8dp</dimen>
+
     <!-- Home screen -->
     <dimen name="screen_home_toolbar_margin_top">32dp</dimen>
     <dimen name="screen_home_item_album_image_size">160dp</dimen>

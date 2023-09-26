@@ -15,4 +15,5 @@
 
     <!-- Search screen -->
     <string name="screen_search_search_hint">What do you want to listen to?</string>
+    <string name="screen_search_browse_all">Browse all</string>
 </resources>
