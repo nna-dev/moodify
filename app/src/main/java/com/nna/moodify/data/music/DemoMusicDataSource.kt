@@ -23,4 +23,8 @@ class DemoMusicDataSource @Inject constructor(
     override suspend fun getPlaylist(playlistId: String): PlaylistDetail {
         throw Exception("Implementing")
     }
+
+    override suspend fun getCategories(limit: Int): List<Category> {
+        throw Exception("Implementing")
+    }
 }

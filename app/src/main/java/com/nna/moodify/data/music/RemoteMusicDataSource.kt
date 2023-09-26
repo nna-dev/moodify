@@ -66,4 +66,17 @@ class RemoteMusicDataSource @Inject constructor(
             }
         return result!!
     }
+
+    override suspend fun getCategories(limit: Int): List<Category> {
+        val result = mutableListOf<Category>()
+        musicService.getCategoriesForCountry("VN", "vi_VN", limit)
+            .suspendOnSuccess {
+                result.addAll(data.categories.items.map { it.toCategory() })
+            }
+            .suspendOnFailure {
+                Timber.e(message())
+                throw Exception(this.message())
+            }
+        return result
+    }
 }

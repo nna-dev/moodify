@@ -31,3 +31,37 @@ fun RecyclerView.addVerticalItemSpacing(
         }
     })
 }
+
+fun RecyclerView.addGridItemSpacing(
+    @IntRange(from = 0) vertical: Int = 0,
+    @IntRange(from = 0) horizontal: Int = 0,
+    spanCount: Int = 1,
+    ignoreStartEndRow: Boolean = false,
+    ignoreFirstLastRow: Boolean = false
+) {
+    addItemDecoration(object : ItemDecoration() {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
+            outRect.top = vertical
+            outRect.bottom = vertical
+            outRect.left = horizontal
+            outRect.right = horizontal
+            if (ignoreStartEndRow) {
+                val position = parent.getChildAdapterPosition(view)
+                val col = position % spanCount
+                if (col == 0) outRect.left = 0
+                if (col == spanCount - 1) outRect.right = 0
+            }
+            if (ignoreFirstLastRow) {
+                val position = parent.getChildAdapterPosition(view)
+                val row = position / spanCount
+                if (row == 0) outRect.top = 0
+                if (row == state.itemCount / spanCount) outRect.bottom = 0
+            }
+        }
+    })
+}

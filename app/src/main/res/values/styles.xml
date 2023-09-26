@@ -19,19 +19,27 @@
 
     <style name="TextAppearance.Title1" parent="TextAppearance.MaterialComponents.Subtitle1" />
 
+    <style name="TextAppearance.Title1.Bold" parent="TextAppearance.Title1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextAppearance.Title2" parent="TextAppearance.MaterialComponents.Subtitle2" />
 
     <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1" />
 
     <style name="TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2">
-<!--        <item name="fontFamily">@font/google_sans_medium</item>-->
+        <!--        <item name="fontFamily">@font/google_sans_medium</item>-->
+    </style>
+
+    <style name="TextAppearance.Body2.Bold" parent="TextAppearance.Body2">
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
         <item name="textAllCaps">false</item>
         <item name="android:letterSpacing">0</item>
-<!--        <item name="android:fontFamily">@font/google_sans_medium</item>-->
-<!--        <item name="fontFamily">@font/google_sans_medium</item>-->
+        <!--        <item name="android:fontFamily">@font/google_sans_medium</item>-->
+        <!--        <item name="fontFamily">@font/google_sans_medium</item>-->
     </style>
 
     <style name="Chip.Filter" parent="Widget.MaterialComponents.Chip.Filter">
@@ -41,6 +49,6 @@
     </style>
 
     <style name="ShapeAppearance.RoundedCorner" parent="ShapeAppearanceOverlay">
-        <item name="cornerSize">8dp</item>
+        <item name="cornerSize">@dimen/corner_size_small</item>
     </style>
 </resources>
