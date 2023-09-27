@@ -22,9 +22,9 @@
 
     <fragment
         android:id="@id/navigation_search"
-        android:name="com.nna.moodify.ui.search.SearchFragment"
+        android:name="com.nna.moodify.ui.browse.BrowseFragment"
         android:label="Search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_browse" />
 
     <fragment
         android:id="@+id/playlistDetail"
