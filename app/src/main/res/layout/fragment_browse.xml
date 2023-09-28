@@ -90,13 +90,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_2x"
                 android:layout_marginTop="@dimen/margin_2x"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_browse_all"
-                app:spanCount="2"
                 tools:itemCount="10"
-                tools:listitem="@layout/item_browse_category" />
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_browse_category"
+                tools:spanCount="2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

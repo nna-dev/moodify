@@ -15,7 +15,7 @@ class BrowseViewModel @Inject constructor(
     private val getCategoriesUseCase: GetCategoriesUseCase
 ) : ViewModel() {
     private val _categories = flow {
-        emit(getCategoriesUseCase(30).successOr(emptyList()))
+        emit(getCategoriesUseCase(8).successOr(emptyList()))
     }
 
     val categories = _categories.shareIn(viewModelScope, SharingStarted.WhileSubscribed(), 1)
