@@ -9,10 +9,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.nna.moodify.R
 import com.nna.moodify.databinding.FragmentBrowseBinding
-import com.nna.moodify.extensions.addGridItemSpacing
 import com.nna.moodify.ui.ViewBindingFragment
 import com.nna.moodify.utils.SpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,9 +33,14 @@ class BrowseFragment : ViewBindingFragment<FragmentBrowseBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding.searchRecycler.apply {
             adapter = this@BrowseFragment.adapter
-            layoutManager = GridLayoutManager(requireContext(), 3, RecyclerView.HORIZONTAL, false)
-            val space = resources.getDimensionPixelSize(R.dimen.margin)
-            addItemDecoration(SpacingItemDecoration(space, 0, 0))
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            addItemDecoration(
+                SpacingItemDecoration(
+                    resources.getDimensionPixelSize(R.dimen.margin),
+                    0,
+                    0
+                )
+            )
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
