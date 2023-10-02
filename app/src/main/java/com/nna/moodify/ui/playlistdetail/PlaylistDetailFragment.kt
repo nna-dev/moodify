@@ -33,7 +33,7 @@ class PlaylistDetailFragment : Fragment() {
     private val binding: FragmentPlaylistDetailBinding
         get() = _binding!!
 
-    private val tracksAdapter: TracksAdapter by lazy { TracksAdapter() }
+    private val tracksAdapter: TracksAdapter by lazy { TracksAdapter(this::onTrackItemClick) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -111,6 +111,13 @@ class PlaylistDetailFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    private fun onTrackItemClick(trackViewModel: TrackViewModel) {
+        viewModel.findTrackWithId(trackViewModel.trackId)?.previewUrl?.let { previewUrl ->
+            val action = PlaylistDetailFragmentDirections.actionPlaylistDetailToPlayerDetail(previewUrl)
+            findNavController().navigate(action)
         }
     }
 

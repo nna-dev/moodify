@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/navigation_search">
+    app:startDestination="@id/navigation_home">
 
     <fragment
         android:id="@id/navigation_home"
@@ -34,5 +34,25 @@
         <argument
             android:name="playlistId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_playlistDetail_to_player_detail"
+            app:destination="@id/player_detail">
+            <argument
+                android:name="mediaUrl"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
     </fragment>
+
+    <fragment
+        android:id="@+id/player_detail"
+        android:name="com.nna.moodify.ui.player.PlayerFragment"
+        android:label="Player"
+        tools:layout="@layout/fragment_player">
+        <argument
+            android:name="mediaUrl"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
 </navigation>

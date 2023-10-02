@@ -106,6 +106,10 @@ dependencies {
     implementation(libs.epoxy.epoxy)
     implementation(libs.epoxy.binding)
     kapt(libs.epoxy.processor)
+
+    // ExoPlayer
+    implementation(libs.exoplayer.core)
+    implementation(libs.exoplayer.ui)
 }
 
 kapt {
