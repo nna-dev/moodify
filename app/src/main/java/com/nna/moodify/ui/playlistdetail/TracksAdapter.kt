@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nna.moodify.R
 import com.nna.moodify.databinding.ItemTrackBinding
 
-class TracksAdapter : ListAdapter<TrackViewModel, TracksAdapter.TrackViewHolder>(TrackDiff) {
+class TracksAdapter(
+    private val onItemClick: (TrackViewModel) -> Unit
+) : ListAdapter<TrackViewModel, TracksAdapter.TrackViewHolder>(TrackDiff) {
     class TrackViewHolder(val binding: ItemTrackBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackViewHolder {
@@ -24,6 +26,7 @@ class TracksAdapter : ListAdapter<TrackViewModel, TracksAdapter.TrackViewHolder>
 
     override fun onBindViewHolder(holder: TrackViewHolder, position: Int) {
         holder.binding.track = getItem(position)
+        holder.itemView.setOnClickListener { onItemClick(getItem(position)) }
     }
 }
 

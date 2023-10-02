@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nna.moodify.domain.Result
 import com.nna.moodify.domain.model.PlaylistDetail
+import com.nna.moodify.domain.model.Track
 import com.nna.moodify.domain.music.GetPlaylistTracksUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
@@ -36,4 +37,10 @@ class PlaylistDetailViewModel @Inject constructor(
         SharingStarted.WhileSubscribed(),
         PlaylistDetailState.Loading
     )
+
+    fun findTrackWithId(id: String): Track? {
+        (detailState.value as? PlaylistDetailState.Success)?.let { state ->
+            return state.playlistDetail.tracks.firstOrNull { it.id == id }
+        } ?: return null
+    }
 }

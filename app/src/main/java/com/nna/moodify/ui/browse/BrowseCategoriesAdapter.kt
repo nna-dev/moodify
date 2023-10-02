@@ -26,7 +26,7 @@ class BrowseCategoriesAdapter :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = getItem(position)
-        holder.title.text = "$position. ${category.name}"
+        holder.title.text = category.name
         Glide.with(holder.itemView).load(category.icons.getDefaultImageUri()).into(holder.image)
     }
 }
