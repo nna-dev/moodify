@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PlayerViewModel @Inject constructor(
-    val musicPlayer: MusicPlayer
+    private val musicPlayer: MusicPlayer
 ) : ViewModel() {
 
     fun playStreamable(streamable: Streamable) {

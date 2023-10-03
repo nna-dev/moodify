@@ -1,5 +1,9 @@
 package com.nna.moodify.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Track(
     val id: String,
     val artists: List<Artist>,
@@ -10,4 +14,4 @@ data class Track(
     val previewUrl: String? = null,
     val trackNumber: Int,
     val uri: String
-)
+): Parcelable
