@@ -10,6 +10,7 @@ import com.nna.moodify.databinding.FragmentPlayerBinding
 import com.nna.moodify.player.MusicStreamable
 import com.nna.moodify.ui.ViewBindingFragment
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class PlayerFragment : ViewBindingFragment<FragmentPlayerBinding>() {
@@ -23,13 +24,8 @@ class PlayerFragment : ViewBindingFragment<FragmentPlayerBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        Timber.d("$this")
         val args = navArgs<PlayerFragmentArgs>()
-        viewModel.playStreamable(MusicStreamable.of(args.value.mediaUrl, "Title"))
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        viewModel.musicPlayer.stop()
+        viewModel.playStreamable(MusicStreamable.of(args.value.mediaUrl, args.value.track.name))
     }
 }

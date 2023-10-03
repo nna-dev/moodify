@@ -12,30 +12,34 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class ExoMusicPlayer @Inject constructor(
-    @ApplicationContext context: Context,
+    @ApplicationContext private val context: Context,
     private val exoPlayer: ExoPlayer
 ) : MusicPlayer, Player.Listener {
+
     private var currentStreamable: Streamable? = null
-    private val notificationManager = PlayerNotificationManager.Builder(
-        context,
-        NOTIFICATION_ID,
-        NOTIFICATION_CHANNEL_ID,
-    ).setChannelImportance(NotificationUtil.IMPORTANCE_LOW)
-        .setChannelNameResourceId(R.string.notification_channel_name)
-        .setChannelDescriptionResourceId(R.string.notification_channel_description)
-        .setMediaDescriptionAdapter(PlayerDescriptionAdapter()).build()
+
+    private val notificationManager by lazy {
+        PlayerNotificationManager.Builder(context, NOTIFICATION_ID, NOTIFICATION_CHANNEL_ID)
+            .setChannelImportance(NotificationUtil.IMPORTANCE_LOW)
+            .setChannelNameResourceId(R.string.playback_notification_channel_name)
+            .setMediaDescriptionAdapter(PlayerDescriptionAdapter(context) { currentStreamable?.info })
+            .build()
+    }
+
+    init {
+        exoPlayer.addListener(this@ExoMusicPlayer)
+        notificationManager.setPlayer(exoPlayer)
+    }
 
     override fun play(streamable: Streamable) {
         with(exoPlayer) {
-            addListener(this@ExoMusicPlayer)
-            if (streamable.info.url == null) return@with
-            if (streamable == currentStreamable) return@with
-            if (isPlaying) stop()
-            setMediaItem(MediaItem.fromUri(streamable.info.url!!))
-            prepare()
-            currentStreamable = streamable
-            notificationManager.setPlayer(exoPlayer)
-            play()
+            if (streamable != currentStreamable) {
+                pause()
+                currentStreamable = streamable
+                setMediaItem(MediaItem.fromUri(streamable.info.url))
+                prepare()
+                play()
+            }
         }
     }
 
@@ -61,7 +65,7 @@ class ExoMusicPlayer @Inject constructor(
     }
 
     companion object {
-        private const val NOTIFICATION_CHANNEL_ID = "com.nna.moodify.NOTIFICATION_CHANNEL_ID"
+        private const val NOTIFICATION_CHANNEL_ID = "com.nna.moodify.player.ExoMusicPlayer"
         private const val NOTIFICATION_ID = 1
     }
 }

@@ -5,7 +5,7 @@ interface Streamable {
 }
 
 data class StreamableInfo(
-    val url: String? = null,
+    val url: String,
     val imageUrl: String? = null,
     val title: String,
     val subTitle: String? = null

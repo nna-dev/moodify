@@ -41,6 +41,10 @@
                 android:name="mediaUrl"
                 app:argType="string"
                 app:nullable="false" />
+            <argument
+                android:name="track"
+                app:argType="com.nna.moodify.domain.model.Track"
+                app:nullable="false" />
         </action>
     </fragment>
 
@@ -52,6 +56,10 @@
         <argument
             android:name="mediaUrl"
             app:argType="string"
+            app:nullable="false" />
+        <argument
+            android:name="track"
+            app:argType="com.nna.moodify.domain.model.Track"
             app:nullable="false" />
     </fragment>
 

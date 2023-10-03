@@ -115,9 +115,15 @@ class PlaylistDetailFragment : Fragment() {
     }
 
     private fun onTrackItemClick(trackViewModel: TrackViewModel) {
-        viewModel.findTrackWithId(trackViewModel.trackId)?.previewUrl?.let { previewUrl ->
-            val action = PlaylistDetailFragmentDirections.actionPlaylistDetailToPlayerDetail(previewUrl)
-            findNavController().navigate(action)
+        viewModel.findTrackWithId(trackViewModel.trackId)?.let { track ->
+            track.previewUrl?.let { previewUrl ->
+                val action =
+                    PlaylistDetailFragmentDirections.actionPlaylistDetailToPlayerDetail(
+                        previewUrl,
+                        track
+                    )
+                findNavController().navigate(action)
+            }
         }
     }
 
