@@ -16,3 +16,12 @@
 - [Epoxy](https://github.com/airbnb/epoxy)
 
 ## Architecture
+
+## Building the app
+1. Create a Spotify account and log into the [Spotify Developer](https://developer.spotify.com).
+2. Create an app and get `Client ID` and `Client Secret`.
+3. Put your `Client ID` and `Client Secret` to the `local.properties` file.
+```properties
+SPOTIFY_CLIENT_ID=[Client ID]
+SPOTIFY_CLIENT_SECRET=[Client Secret]
+```
