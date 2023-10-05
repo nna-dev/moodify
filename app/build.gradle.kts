@@ -8,6 +8,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
@@ -115,4 +116,13 @@ dependencies {
 
 kapt {
     correctErrorTypes = true
+}
+
+detekt {
+    source.setFrom("src/main/java")
+    parallel = false
+    config.setFrom("../config/detekt/detekt.yml")
+    buildUponDefaultConfig = true
+    ignoredBuildTypes = listOf("release")
+    basePath = projectDir.absolutePath
 }
