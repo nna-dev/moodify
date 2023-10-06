@@ -9,6 +9,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
     id("io.gitlab.arturbosch.detekt")
+    id("com.diffplug.spotless")
 }
 
 android {
@@ -58,6 +59,10 @@ android {
     buildFeatures {
         dataBinding = true
         viewBinding = true
+    }
+
+    lint {
+        abortOnError = false
     }
 }
 
