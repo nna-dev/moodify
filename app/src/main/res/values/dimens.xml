@@ -44,4 +44,8 @@
     <dimen name="screen_search_item_title_margin_end">32dp</dimen>
     <dimen name="screen_search_item_image_size">64dp</dimen>
     <dimen name="screen_search_item_image_translationX">16dp</dimen>
+
+    <!-- Player view -->
+    <dimen name="player_view_image_size">32dp</dimen>
+    <dimen name="player_view_icon_size">@dimen/small_icon_size</dimen>
 </resources>

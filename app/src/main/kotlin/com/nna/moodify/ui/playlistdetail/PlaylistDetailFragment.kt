@@ -23,6 +23,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -35,6 +36,7 @@ import com.nna.moodify.R
 import com.nna.moodify.databinding.FragmentPlaylistDetailBinding
 import com.nna.moodify.domain.model.getDefaultImageUri
 import com.nna.moodify.extensions.addVerticalItemSpacing
+import com.nna.moodify.ui.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -45,6 +47,7 @@ import kotlin.math.abs
 @AndroidEntryPoint
 class PlaylistDetailFragment : Fragment() {
     private val viewModel: PlaylistDetailViewModel by viewModels()
+    private val sharedViewModel: MainViewModel by activityViewModels()
     private var _binding: FragmentPlaylistDetailBinding? = null
     private val binding: FragmentPlaylistDetailBinding
         get() = _binding!!
@@ -132,14 +135,7 @@ class PlaylistDetailFragment : Fragment() {
 
     private fun onTrackItemClick(trackViewModel: TrackViewModel) {
         viewModel.findTrackWithId(trackViewModel.trackId)?.let { track ->
-            track.previewUrl?.let { previewUrl ->
-                val action =
-                    PlaylistDetailFragmentDirections.actionPlaylistDetailToPlayerDetail(
-                        previewUrl,
-                        track
-                    )
-                findNavController().navigate(action)
-            }
+            sharedViewModel.onSelectTrack(track)
         }
     }
 

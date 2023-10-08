@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Designed and developed by 2023 nna-dev
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/player_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/small_rounded_bg"
+    android:backgroundTint="?attr/colorSurface"
+    android:padding="@dimen/margin">
+
+    <ImageView
+        android:id="@+id/player_img"
+        android:layout_width="@dimen/player_view_image_size"
+        android:layout_height="@dimen/player_view_image_size"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/test_image" />
+
+    <TextView
+        android:id="@+id/player_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:scrollHorizontally="true"
+        android:textAppearance="@style/TextAppearance.Body2"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintEnd_toStartOf="@id/btn_container"
+        app:layout_constraintStart_toEndOf="@id/player_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Music title" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_container"
+        app:layout_constraintStart_toStartOf="@id/player_title"
+        app:layout_constraintTop_toBottomOf="@id/player_title"
+        tools:text="Artists or device" />
+
+    <LinearLayout
+        android:id="@+id/btn_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/player_device_icon"
+            android:layout_width="@dimen/player_view_icon_size"
+            android:layout_height="@dimen/player_view_icon_size"
+            android:layout_margin="@dimen/margin"
+            android:src="@drawable/ic_speaker" />
+
+        <ImageView
+            android:id="@+id/player_play_btn"
+            android:layout_width="@dimen/player_view_icon_size"
+            android:layout_height="@dimen/player_view_icon_size"
+            android:layout_margin="@dimen/margin"
+            android:src="@drawable/ic_play" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

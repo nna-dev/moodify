@@ -17,11 +17,28 @@
 package com.nna.moodify.ui
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.nna.moodify.domain.model.Track
+import com.nna.moodify.player.MusicStreamable
+import com.nna.moodify.player.Streamable
+import com.nna.moodify.player.StreamableInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
 ) : ViewModel() {
+    private val _currentStreamable = MutableStateFlow<Streamable?>(null)
+    val currentStreamable = _currentStreamable.asStateFlow()
 
+    fun onSelectTrack(track: Track) {
+        viewModelScope.launch {
+            track.previewUrl?.let { url ->
+                _currentStreamable.value = MusicStreamable.of(track.previewUrl, track.name)
+            }
+        }
+    }
 }
