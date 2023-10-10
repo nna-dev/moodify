@@ -36,9 +36,9 @@
     <color name="error">#FFB00020</color>
     <color name="on_error">@color/white</color>
 
-    <color name="bottom_navigation_bg_start_color">@color/background</color>
-    <color name="bottom_navigation_bg_center_color">#BF121212</color>
-    <color name="bottom_navigation_bg_end_color">@android:color/transparent</color>
+    <color name="bottom_navigation_bg_start_color">@android:color/transparent</color>
+    <color name="bottom_navigation_bg_center_color">#E6121212</color>
+    <color name="bottom_navigation_bg_end_color">@color/background</color>
     <!-- Home screen -->
     <color name="screen_home_card_subtitle_color">#A7A7A7</color>
 </resources>

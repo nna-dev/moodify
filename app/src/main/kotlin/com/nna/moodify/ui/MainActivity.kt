@@ -58,6 +58,12 @@ class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main
             setupWithNavController(navController)
         }
 
+        binding.player.apply {
+            playerPlayBtn.setOnClickListener {
+
+            }
+        }
+
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 lifecycleScope.launch {
