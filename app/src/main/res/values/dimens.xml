@@ -23,7 +23,6 @@
     <dimen name="small_icon_size">24dp</dimen>
     <!--bottom_navigation_background_height = bottom_navigation_height + bottom_navigation_extra_bg_height-->
     <dimen name="bottom_navigation_background_height">128dp</dimen>
-    <dimen name="bottom_navigation_extra_bg_height">64dp</dimen>
     <dimen name="bottom_navigation_height">64dp</dimen>
 
     <dimen name="default_toolbar_height">56dp</dimen>
