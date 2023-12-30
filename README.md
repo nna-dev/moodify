@@ -28,3 +28,4 @@ SPOTIFY_CLIENT_SECRET=[Client Secret]
 
 ## Coding quality tools
 - [detekt](https://github.com/detekt/detekt)
+- [spotless](https://github.com/diffplug/spotless)
